@@ -3,6 +3,9 @@ export class GlobleConstants {
   public static genericError: string =
     'Something went wrong. Please try again later';
 
+  public static unauthorized: string =
+    'You are not authorized this page.';
+
   //regex
   public static nameRegex: string = '[a-zA-Z0-9 ]*';
 

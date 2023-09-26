@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { ChangePasswordComponent } from 'src/app/material-component/dialog/view-bill-products/change-password/change-password.component';
+import { ConfirmationComponent } from 'src/app/material-component/dialog/view-bill-products/confirmation/confirmation.component';
+
 
 @Component({
   selector: 'app-header',
@@ -6,7 +11,28 @@ import { Component } from '@angular/core';
   styleUrls: []
 })
 export class AppHeaderComponent {
+role:any;
+  constructor(private router:Router,private dialog:MatDialog) {
+  }
+  logout(){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = {
+      message:'Logout',
+      confirmation:true
 
-  constructor() {
+    };
+    const dialogRef = this.dialog.open(ConfirmationComponent,dialogConfig);
+    const sub = dialogRef.componentInstance.onEmitStatusChange.subscribe((response)=>{
+      dialogRef.close();
+      localStorage.clear();
+      this.router.navigate(['/']);
+    })
+  }
+  changePassword(){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.width = '550px';
+    this.dialog.open(ChangePasswordComponent,dialogConfig);
+    
+
   }
 }

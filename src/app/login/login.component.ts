@@ -23,42 +23,54 @@ export class LoginComponent implements OnInit {
     public dialogRef: MatDialogRef<LoginComponent>,
     private ngxService: NgxUiLoaderService,
     private snackbarService: SnackbarService,
-    private router:Router
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     this.loginform = this.formBuilder.group({
-      email: [null, [Validators.required, Validators.pattern(GlobleConstants.emailRegex)]],
-      password:[null,[Validators.required]],
-
+      email: [
+        null,
+        [Validators.required, Validators.pattern(GlobleConstants.emailRegex)],
+      ],
+      password: [null, [Validators.required]],
     });
   }
 
-  handleSubmit(){
+  handleSubmit() {
     this.ngxService.start();
     var formData = this.loginform.value;
     var data = {
-      email:formData.email,
-      password:formData.password,
-
-    }
-    this.userService.login(data).subscribe((response:any)=>{
-      this.ngxService.stop();
-      this.responseMessage = response ?.message;
-      this.dialogRef.close();
-      localStorage.setItem('token',response.token);
-      this.router.navigate(['/cafe/dashboard'])
-      this.snackbarService.openSnackBar(this.responseMessage,'Successfully Login');
-    },(error)=>{
-      this.ngxService.stop();
-      if(error.error?.message){
-        this.responseMessage = error.error?.message;
-      }else{
-        this.responseMessage = GlobleConstants.genericError;
+      email: formData.email,
+      password: formData.password,
+    };
+    this.userService.login(data).subscribe(
+      (response: any) => {
+        this.ngxService.stop();
+        this.responseMessage = response?.message;
+        this.dialogRef.close();
+        localStorage.setItem('token', response.token);
+        this.router.navigate(['/cafe/dashboard']);
+        this.snackbarService.openSnackBar(
+          this.responseMessage,
+          'Successfully Login'
+        );
+      },
+      (error) => {
+        this.ngxService.stop();
+        if (error.error?.message) {
+          this.responseMessage = error.error?.message;
+        } else {
+          this.responseMessage = GlobleConstants.genericError;
+        }
+        this.snackbarService.openSnackBar(
+          this.responseMessage,
+          GlobleConstants.error
+        );
       }
-      this.snackbarService.openSnackBar(this.responseMessage,GlobleConstants.error);
-    })
+    );
   }
-
+  handleAddAction(){
+    
+  }
 }
 

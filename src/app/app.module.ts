@@ -64,6 +64,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
       multi: true,
     },
   ],
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}

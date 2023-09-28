@@ -16,6 +16,8 @@ import { CategoryComponent } from './dialog/category/category.component';
 import { ManageCategoryComponent } from './manage-category/manage-category.component';
 import { ManageProductComponent } from './manage-product/manage-product.component';
 import { ProductComponent } from './dialog/product/product.component';
+import { ManageOrderComponent } from './manage-order/manage-order.component';
+import { MatSelectModule } from '@angular/material/select';
 
 
 
@@ -29,6 +31,8 @@ import { ProductComponent } from './dialog/product/product.component';
     ReactiveFormsModule,
     FlexLayoutModule,
     CdkTableModule,
+    MatSelectModule,
+    
   ],
   providers: [],
   declarations: [
@@ -39,6 +43,7 @@ import { ProductComponent } from './dialog/product/product.component';
     CategoryComponent,
     ManageProductComponent,
     ProductComponent,
+    ManageOrderComponent,
   ],
 
 })

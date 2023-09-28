@@ -47,7 +47,7 @@
         <button mat-icon-button color="primary" matTooltip="Delete" (click)="handleDeleteAction(element)">
           <mat-icon>delete</mat-icon>
         </button>
-        
+
         <mat-slide-toggle (change)="onChange($event.checked,element.id)" color="primary"
           matTooltip="Activate or Deactivate Products" [checked]="element.status"></mat-slide-toggle>
       </td>

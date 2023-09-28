@@ -3,8 +3,11 @@ export class GlobleConstants {
   public static genericError: string =
     'Something went wrong. Please try again later';
 
-  public static unauthorized: string =
-    'You are not authorized this page.';
+  public static unauthorized: string = 'You are not authorized this page.';
+
+  public static productExistError: string = 'product already exists';
+
+  public static productedAdded: string = 'product added successfully.';
 
   //regex
   public static nameRegex: string = '[a-zA-Z0-9 ]*';

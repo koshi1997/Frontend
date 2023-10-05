@@ -18,6 +18,8 @@ import { ManageProductComponent } from './manage-product/manage-product.componen
 import { ProductComponent } from './dialog/product/product.component';
 import { ManageOrderComponent } from './manage-order/manage-order.component';
 import { MatSelectModule } from '@angular/material/select';
+import { ViewBillComponent } from './view-bill/view-bill.component';
+import { ManageUserComponent } from './manage-user/manage-user.component';
 
 
 
@@ -44,6 +46,8 @@ import { MatSelectModule } from '@angular/material/select';
     ManageProductComponent,
     ProductComponent,
     ManageOrderComponent,
+    ViewBillComponent,
+    ManageUserComponent,
   ],
 
 })

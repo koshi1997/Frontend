@@ -25,7 +25,7 @@ const MENUITEM = [
   },
   {
     state: 'product',
-    name: 'Manage product',
+    name: 'Manage Product',
     type: 'link',
     icon: 'inventory_2',
     role: '',
@@ -35,6 +35,20 @@ const MENUITEM = [
     name: 'Manage Order',
     type: 'link',
     icon: 'shopping_cart',
+    role: '',
+  },
+   {
+    state: 'bill',
+    name: 'View Bill',
+    type: 'link',
+    icon: 'backup_table',
+    role: '',
+  },
+  {
+    state: 'user',
+    name: 'Manage User',
+    type: 'link',
+    icon: 'people',
     role: '',
   }
 ];

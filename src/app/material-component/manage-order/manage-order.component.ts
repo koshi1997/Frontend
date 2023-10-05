@@ -170,17 +170,18 @@ export class ManageOrderComponent implements OnInit {
       this.totalAmount === 0 ||
       this.manageOrderForm.controls['name'].value === null ||
       this.manageOrderForm.controls['contactNumber'].value === null ||
-      this.manageOrderForm.controls['paymentMethod'].value
+      this.manageOrderForm.controls['paymentMethod'].value === null
     ) {
       return true;
-    } else {
+    }
+     else {
       return false;
     }
   }
 
   add() {
     var formData = this.manageOrderForm.value;
-    
+
     if (!this.dataSource) {
       this.dataSource = [];
     }
@@ -210,6 +211,7 @@ export class ManageOrderComponent implements OnInit {
         GlobleConstants.error
       );
     }
+    this.validateSubmit();
   }
 
   handleDeleteAction(value: any, element: any) {
